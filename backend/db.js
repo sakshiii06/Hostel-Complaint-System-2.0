@@ -9,9 +9,9 @@ const Pool = require("pg").Pool;
 // });
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
-// ssl: {
- // rejectUnauthorized: false // Set to true if you have a valid CA certificate
- //}
+ ssl: {
+  rejectUnauthorized: false // Set to true if you have a valid CA certificate
+ }
 })
 
 pool.on("error", (error, client) => {
