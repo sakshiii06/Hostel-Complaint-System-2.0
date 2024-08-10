@@ -17,7 +17,7 @@ function AccountPage() {
   useEffect(() => {
     const fetchUserType = async () => {
       try {
-        const response = await fetch("http://localhost:3000/userType", {
+        const response = await fetch("https://hostel-complaint-system-2-0.onrender.com/userType", {
           method: "GET",
           headers: headers,
         });
@@ -40,7 +40,7 @@ function AccountPage() {
   const getuserDetails = async (user_id) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/userDetails/${user_id}`,
+        `https://hostel-complaint-system-2-0.onrender.com/userDetails/${user_id}`,
         {
           method: "GET",
           headers: headers,

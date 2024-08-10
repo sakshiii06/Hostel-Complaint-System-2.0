@@ -38,7 +38,7 @@ function Register() {
           room,
         };
       }
-      const response = await fetch("http://localhost:3000/register", {
+      const response = await fetch("https://hostel-complaint-system-2-0.onrender.com/register", {
         method: "POST",
         headers: { "content-type": "application/json " },
         body: JSON.stringify(body),

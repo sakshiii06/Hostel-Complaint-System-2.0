@@ -48,7 +48,7 @@ const ComplaintForm = () => {
 
     try {
       const body = { name, description, room };
-      const response = await fetch("http://localhost:3000/complaints", {
+      const response = await fetch("https://hostel-complaint-system-2-0.onrender.com/complaints", {
         method: "POST",
         headers: headers,
         body: JSON.stringify(body),
@@ -206,7 +206,7 @@ const Complaint = () => {
 
   const getComplaints = async (e) => {
     try {
-      const response = await fetch("http://localhost:3000/complaints", {
+      const response = await fetch("https://hostel-complaint-system-2-0.onrender.com/complaints", {
         method: "GET",
         headers: headers,
       });
