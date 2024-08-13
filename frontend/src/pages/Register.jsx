@@ -3,7 +3,7 @@ import { Roles } from "../constants";
 import { useState } from "react";
 
 function Register() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,19 +38,22 @@ function Register() {
           room,
         };
       }
-      const response = await fetch("https://hostel-complaint-system-2-0.onrender.com/register", {
-        method: "POST",
-        headers: { "content-type": "application/json " },
-        body: JSON.stringify(body),
-      });
+      const response = await fetch(
+        "https://hostel-complaint-system-2-0.onrender.com/register",
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
       console.log(response);
       const data = await response.json();
       console.log(data);
       if (data.jwtToken) {
-        alert("User registered successfully,login to proceed");
-        navigate('/login')
+        alert("User registered successfully, login to proceed");
+        navigate("/login");
       } else {
-        alert("user already exists");
+        alert("User already exists");
       }
     } catch (err) {
       console.log(err.message);
@@ -59,7 +62,15 @@ function Register() {
 
   return (
     <>
-      <div className="flex min-h-screen w-screen items-center justify-center text-gray-600 bg-gray-50">
+      <div
+        className="flex min-h-screen w-screen items-center justify-center text-gray-600"
+        style={{
+          backgroundImage:
+            "url('https://www.sgsits.ac.in/images/speasyimagegallery/albums/10/images/mainporchphoto.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="relative">
           <div className="hidden sm:block h-56 w-56 text-indigo-300 absolute a-z-10 -left-20 -top-20">
             <svg
@@ -79,7 +90,7 @@ function Register() {
                   <rect x="0" y="0" width="100%" height="100%" fill="none" />
                   <path
                     d="M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5"
-                    stroke-width="1"
+                    strokeWidth="1"
                     stroke="none"
                     fill="currentColor"
                   />
@@ -111,7 +122,7 @@ function Register() {
                   <rect x="0" y="0" width="100%" height="100%" fill="none" />
                   <path
                     d="M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5"
-                    stroke-width="1"
+                    strokeWidth="1"
                     stroke="none"
                     fill="currentColor"
                   />
@@ -129,11 +140,16 @@ function Register() {
           <div className="relative flex flex-col sm:w-full md:w-[30rem] lg:w-[30rem] xl:w-[30rem] 2xl:w-[30rem] rounded-lg border-gray-400 bg-white shadow-lg px-4">
             <div className="flex-auto p-6">
               <div className="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/en/4/4b/SGSITS_Indore.png"
+                  alt="SGSITS Logo"
+                  className="h-16 w-16 object-contain mr-2"
+                />
                 <a
                   href="#"
                   className="flex cursor-pointer items-center gap-2 text-indigo-500 no-underline hover:text-indigo-500"
                 >
-                  <span className="flex-shrink-0 text-3xl font-black  tracking-tight opacity-100">
+                  <span className="flex-shrink-0 text-3xl font-black tracking-tight opacity-100">
                     Signup.
                   </span>
                 </a>
@@ -340,3 +356,4 @@ function Register() {
 }
 
 export default Register;
+
